@@ -13,8 +13,7 @@ $email_body = "User Name: $name.\n".
               "Subject: $subject.\n"
               "User Message: $message.\n";
 
-
-$to = 'hardikkamaliya@0000gamil.com'
+$to = 'hardikkamaliya0000@gmail.com'
 
 $headers = "From: $email_form \r\n";
 
@@ -23,6 +22,4 @@ $headers = "Ready-To: $visitor_email \r\n";
 mail($to,$email_subject_body,$headers)
 
 header("Location: contact.html")
-
-
 ?>
