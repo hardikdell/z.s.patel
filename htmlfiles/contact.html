@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Smt Z.S. Patel College of Management And Technology - Vidhya Kunj Sankul
+    </title>
+    <link rel="stylesheet" href="/css/stylee.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--------- email -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"
+          ><img class="nav-img" src="/img/z.s patel.png"
+        /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hidemenu()"></i>
+          <ul>
+            <li><a href="/htmlfiles/index.html">HOME</a></li>
+            <li><a href="/htmlfiles/about.html">ABOUT</a></li>
+            <li><a href="/htmlfiles/course.html">COURSE</a></li>
+            <li><a href="/htmlfiles/blog.html">BLOG</a></li>
+            <li><a href="/htmlfiles/contact.html">CONTACT</a></li>
+            <li>
+              <a
+                href="https://zspatelcollege.co.in/evidya/login.php"
+                target="_blank"
+                >eVidya Login</a
+              >
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showmenu()"></i>
+      </nav>
+
+      <h1>Contact Us</h1>
+    </section>
+
+    <!--------------- Contact Us -->
+
+    <section class="location">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.5615832734766!2d72.7783331744556!3d21.20956828048531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d0661297ab1%3A0x431a7294d8b6cd91!2sZ.s.patel%20college%20surat!5e0!3m2!1sen!2sin!4v1690891266807!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <section class="contact-us">
+      <div class="row">
+        <div class="contact-col">
+          <div>
+            <a
+              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.5615832734766!2d72.7783331744556!3d21.20956828048531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d0661297ab1%3A0x431a7294d8b6cd91!2sZ.s.patel%20college%20surat!5e0!3m2!1sen!2sin!4v1690891266807!5m2!1sen!2sin"
+              ><i class="fa-solid fa-house"></i
+            ></a>
+            <span>
+              <h5>Shanti Kunj Society, Palanpur Jakatnaka</h5>
+              <p>Surat, Gujarat 395009</p>
+            </span>
+          </div>
+
+          <div>
+            <a href="tel:7383705580"><i class="fa-solid fa-phone"></i></a>
+            <span>
+              <h5>(+0261) 2760963, (+91) 7383705580</h5>
+              <p>Monday to Saturday, 7:30AM to 5:30PM</p>
+            </span>
+          </div>
+
+          <div>
+            <a href="principal@zspatelcollege.com"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+            <span>
+              <h5>principal@zspatelcollege.com</h5>
+              <p>Email us Your Qurey</p>
+            </span>
+          </div>
+        </div>
+
+        <div class="contact-col">
+          <form action="">
+            <input
+              type="text"
+              name="name"
+              id="fname"
+              placeholder="Enter Your Full Name"
+            />
+
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter Your Email Address"
+            />
+
+            <input
+              type="text"
+              name="message"
+              id="message"
+              placeholder="Type Your Message"
+            />
+
+            <button onclick="sendmail(event);" class="hero-btn red-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!--------------- js for email ----------->
+    <script>
+      (function () {
+        emailjs.init("30-gJTBUjwzdR868O");
+      })();
+      function sendmail(event) {
+        event.preventDefault();
+        // console.log("clicked");
+        // console.log(document.getElementById("fname").value);
+
+        let name = document.getElementById("fname").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        // console.log(name,  email, message);
+        // console.log(name,"name");
+        if (name == "" || email == "" || message == "") {
+          document.getElementById("fname").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+          alert("please fill up all details");
+          return;
+        }
+
+        var templateParams = {
+          uname: name,
+          uemail: email,
+          umessage: message,
+        };
+
+        emailjs
+          .send("service_fdivcqe", "template_2b2altw", templateParams)
+          .then(
+            function (response) {
+              // console.log('SUCCESS!', response.status, response.text);
+              alert("Message Send Successfully!");
+              document.getElementById("fname").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("message").value = "";
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+
+        fname = "";
+        email = "";
+        message = "";
+      }
+    </script>
+
+    <!------------------------ JS FOR TOGGLE MENU --------------->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showmenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hidemenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
